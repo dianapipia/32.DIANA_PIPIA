@@ -16,17 +16,8 @@
   padding-top: 18px;
   padding-bottom: 18px;
 }
-.nav-link {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 28px;
-  color: #957554;
-  text-decoration: none;
-}
-.nav-link:hover {
-  color: black;
-}
+
+
 .navigation {
   display: flex;
   gap: 50px;
@@ -283,4 +274,13 @@ color: black;
 }
 .gallery-grid img:nth-child(4) {
   grid-area: 2/3/3/6;
+}
+
+.subcategory {
+  display: none;
+  position: absolute;
+}
+
+.item-category:hover .subcategory {
+  display: block;
 }

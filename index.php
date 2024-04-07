@@ -4,25 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bon Hotel</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <?php include "variable.php"; ?>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header-flex">
           <img src="./assets/LOGO.png" alt="LOGO" />
-          <nav class="navigation">
-            <a href="#" class="nav-link">Our Hotel</a>
-            <a href="#" class="nav-link">Rooms & Rates</a>
-            <a href="#" class="nav-link">Facilities</a>
-            <a href="#" class="nav-link">Contact Us</a>
-          </nav>
+          <ul class="nav">
+            <!-- php -->
+            <?php
+            foreach ($categories as $category) {
+              echo '<li class="item-category">
+              <a class="link" href=" ' . $category['link'] . '"> ' . $category['name'] . '</a>
+              <ul class="subcategory">';
+
+              foreach ($category['children'] as $subcategory) {
+                echo '<li>
+                        <a class="link" href=" ' . $subcategory['link'] . '"> ' . $subcategory['name'] . '</a>
+                      </li>';
+              }
+
+                echo '</ul> .
+                    </li>';
+              }   
+              ?>   
+          </ul>       
         </div>
       </div>
     </header>
